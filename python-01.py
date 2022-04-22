@@ -11,14 +11,16 @@ nombre="Cumbi"
 edad=55
 print(saludo,nombre,edad)
 
-agua = 25
-luz = 30
+agua = 2500
+luz = 300
 gas = 35
 web = 500
 
 servicios = agua + luz + gas + web
 
 descuento = servicios * 0.10
+
+
 
 valor_a_pagar = servicios - descuento
 

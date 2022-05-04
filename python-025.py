@@ -5,7 +5,7 @@ n = int(input("Ingrese un número para generar la sucesión de Fibonacci: "))
 p1 = 0
 p2 = 1
 fibonacci = 0
-contador = 0
+contador = 1
 
 while (contador <= n):
 

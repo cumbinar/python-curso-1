@@ -4,16 +4,12 @@ n = int(input('Valor hasta donde se debe imprimir:  '))
 valor = 2
 pos = 1
 
-print(valor)
-while(pos < n ):
+while(valor < n ):
+    print(valor)
     if(pos % 2 == 1):
-        valor = valor + 3
-        if(valor < n):
-            print(valor)
+        valor = valor + 3       
     else:
-        valor = valor + 2
-        if(valor < n): 
-            print(valor)   
+        valor = valor + 2     
     pos = pos + 1
 
 

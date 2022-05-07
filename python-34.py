@@ -26,7 +26,7 @@ print('')
 contador = lado
 for i in range(lado):
     print('P'*contador)
-contador -= 1
+    contador -= 1
 
 
 print('')
@@ -35,7 +35,7 @@ print('')
 contador = lado
 for i in range(lado):
     print(' ' * i + 'X'*contador)
-contador -= 1
+    contador -= 1
 
 print('')
 

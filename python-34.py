@@ -18,7 +18,7 @@ print('')
 contador = 1
 for i in range(lado):
     print('S'*contador)
-contador = contador + 1
+    contador = contador + 1
 
 
 print('')

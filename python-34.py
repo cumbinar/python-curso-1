@@ -1,4 +1,4 @@
-#for i in range(): Imprimir figuras con caracters 
+#for i in range( ): Imprimir figuras con caracters 
 
 lado = int(input('Ingrese el lado del cuadrado:  '))
 

@@ -1,63 +1,71 @@
-#calculadora básica con funciones y match(op):
-
-from pickletools import read_bytes1
-
+#calculadora básica con funciones y match(opc):
 
 def sumar(a, b):
     res = a + b
-    print('El resultado de la SUMA es: ' + str(res))
+    print()
+    print('El RESULTADO de SUMAR '+ str(a)+' más ' + str(b)+ ' es '  + str(res))
 
 def restar(a, b):
     res = a - b
-    print('El resultado de la RESTA es: ' + str(res))
+    print()
+    print('El RESULTADO de la RESTAR ' + str(a) +' menos ' + str(b) + ' es ' + str(res))
 
 def multiplicar(a, b):
     res = a * b
-    print('El resultado de la MULTIPLICACIÓN es: ' + str(res))
+    print()
+    print('El RESULTADO de MULTIPLICAR '+ str(a)+' por ' + str(b)+ ' es ' + str(res))
 
 def dividir(a, b):
     if(b != 0):
         res = a / b
-        print('El resultado de la DIVISIÓN es: ' + str(res))
+        print()
+        print('El RESULTADO de DIVIDIR ' + str(a)+' entre ' + str(b) + ' es ' + str(res))
     else:
-        print('NO es posible dividir entre CERO')    
-
-print('Para SUMAR digite el número 1')
-print('Para RESTAR digite el número 2')
-print('Para MULTIPLICAR digite el número 3')
-print('Para DIVIDIR digite el número 4')
-print('Para SALIR digite el número 5')
+        print()
+        print('NO es POSIBLE dividir ' +  str(a) + ' entre CERO ')
 
 
-opc = int(input('Seleeccione una opción: '))
+while(True):
+    print()
+    print('Para SUMAR digite:       1')
+    print('Para RESTAR digite:      2')
+    print('Para MULTIPLICAR digite: 3')
+    print('Para DIVIDIR digite:     4')
+    print('Para SALIR digite:       5')
+    print()
 
+    opc = int(input('Seleeccione una opción: '))
 
+    match(opc):
+        case 1:
+            a = int(input('Ingrese el PRIMER  número para SUMAR: '))
+            b = int(input('Ingrese el SEGUNDO número para SUMAR: '))
+            sumar(a, b)
+          
 
-match(opc):
-    case 1:
-        a = int(input('Ingrese el PRIMER número: '))
-        b = int(input('Ingrese el SEGUNDO número: '))
-        sumar(a, b)
+        case 2:
+            a = int(input('Ingrese el PRIMER  número para RESTAR: '))
+            b = int(input('Ingrese el SEGUNDO número para RESTAR: '))
+            restar(a,b)
 
-    case 2:
-        a = int(input('Ingrese el PRIMER número: '))
-        b = int(input('Ingrese el SEGUNDO número: '))
-        restar(a,b)
+        case 3:
+            a = int(input('Ingrese el PRIMER número  MULTIPLICAR: '))
+            b = int(input('Ingrese el SEGUNDO número MULTIPLICAR: '))
+            multiplicar(a, b)
 
-    case 3:
-        a = int(input('Ingrese el PRIMER número: '))
-        b = int(input('Ingrese el SEGUNDO número: '))
-        multiplicar(a, b)
+        case 4:
+            a = int(input('Ingrese el PRIMER  número para DIVIDIR: '))
+            b = int(input('Ingrese el SEGUNDO número para DIVIDIR: '))
+            dividir(a, b)
 
-    case 4:
-        a = int(input('Ingrese el PRIMER número: '))
-        b = int(input('Ingrese el SEGUNDO número: '))
-        dividir(a, b)
-
-    case 5:
-        print('Fin del cálculo')
-        opc = False
-    case _:
-        print('ERROR')
+        case 5:
+            print()
+            print('Fin del cálculo')
+            print()
+            break
+        case _:
+            print()
+            print('ERROR')
+            print()
        
 

@@ -2,21 +2,29 @@
 
 #funcion que pide los datos, calcula el área del rectángulo y los muestra
 def area_rectangulo():
-    largo = int(input('Ingrese el LARGO del RECTÁNGULO:  '))
-    ancho = int(input('Ingrese el ANCHO del RECTÁNGULO:  '))
-    area = largo * ancho
-    print('El área del triángulo es:  '+ str(area))
-
+    base = int(input('Ingrese la  BASE del  RECTÁNGULO:  '))
+    altura = int(input('Ingrese la ALTURA del RECTÁNGULO:  '))
+    area = base * altura
+    print()
+    print('El ÁREA Rectangular de base: '+ str(base)+ ' y altura '+str(altura)+ ',  es: '+str(area))
+    print()
 #funcion que pide los datos, calcula el área del triángulo y los muestra
 def area_triangulo(): 
-    pass
+    base = int(input('Ingrese la BASE  del  TRIÁNGULO:  '))
+    altura = int(input('Ingrese la ALTURA del TRIÁNGULO:  '))
+    area = (base * altura)/2
+    print()
+    print('El ÁREA Triangular de base: '+ str(base)+ ' y altura '+str(altura)+ ',  es: '+str(area))
+    print()
 #funcion que pide los datos, calcula el área del trapecio y los muestra
 def area_trapecio():
     lado_mayor = int(input('Ingrese el lado MAYOR del TRAPECIO:  '))
     lado_menor = int(input('Ingrese el lado MENOR del TRAPECIO:  '))
-    alto = int(input('Ingrese la ALTURA del TRAPECIO:  '))
-    area = (lado_mayor + lado_menor) * alto / 2
-    print('El área del TRAPECIO es:  ' + str(area))
+    altura = int(input('    Ingrese la ALTURA del TRAPECIO:  '))
+    area = (lado_mayor + lado_menor) * altura / 2
+    print()
+    print('El ÁREA Trapezoidal de lado mayor: ' + str(lado_mayor) +', lado menor ' + str(lado_menor)+(' y altura ')+ str(altura) + ',  es: '+str(area))
+    print()
 
 
 #funcion que muestra opciones de un menu
@@ -26,7 +34,9 @@ def menu_areas():
         print('Para el área TRIANGULAR,  digite:   2 ')
         print('Para el área TRAPEZOIDAL, digite:   3 ')
         print('Para terminar el proceso, digite:   4 ')
-        opc = int(input('Seleccione una opción:  '))
+        print()
+        opc = int(input('           Seleccione una opción:   '))
+        print()
 
         match (opc):
             case 1:
@@ -36,7 +46,8 @@ def menu_areas():
             case 3:
                 area_trapecio() 
             case 4:
-                print('Termina el proceso') 
+                print('Termina el proceso')
+                print() 
                 break   
             case _: 
                 print('Opción no válida')      

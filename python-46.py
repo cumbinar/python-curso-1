@@ -1,0 +1,12 @@
+#ordenar una lista de menor a mayor con el método sort()
+print()
+print('Ordenar una lista de menor a mayor')
+print()
+lista = [4, 55, 6, 88, 70, 19, 23, 45, 67, 44, 59, 11, 10]
+print('esta es la lista de entrada:')
+print(lista)
+print()
+lista.sort()
+print('Esta es la lista ordenada')
+print(lista)
+print()

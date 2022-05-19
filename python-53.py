@@ -10,7 +10,7 @@ def ingresar_contacto(listanombres, listatelefonos):
     
 
 def mostrar_contactos(listanombres, listatelefonos):
-    for i in range(len(listanombres)):
+    for i in range(len(listanombres)): #el [i] va hasta la longitud del string
         print('Nombre: ' + listanombres[i] + ', -- Teléfono: ' + str(listatelefonos[i]))
 
 def presentar_menu():

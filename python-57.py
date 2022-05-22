@@ -1,34 +1,41 @@
-#Agenda con diccionario
+#Agenda con Nombre y Teléfono, estructura diccionario, clave: valor
 
 def ingresar_contacto(listaregistros):
     nombre = input('Ingrese el Nombre: ')
     telefono = int(input('Ingrese el número de teléfono: '))
+    
+    #ahora se crea el diccionario llamado registro con clave: valor
     registro = {
-        'nombre': nombre, 
-        'telefono': telefono
+        "nombre": nombre, 
+        "telefono": telefono
         }
+
     listaregistros.append(registro)
     return listaregistros
 
 
 def mostrar_contactos(listaregistros):
-    for i in listaregistros:
-        print('CONTACTOS REGISTRADOS')
-        #print(i)
-        #print(listaregistros)
-        for j in listaregistros:
-            print('NOMBRE: '+ j['nombre']+'  TELÉFONO: '+ str(j['telefono']))
+    print('CONTACTOS REGISTRADOS')
+    print()
+    #print(i)
+    #print(listaregistros)
+    for j in listaregistros:
+        print('NOMBRE: '+ j["nombre"]+'  TELÉFONO: '+ str(j["telefono"]))
+    print()
            
 
 
 def presentar_menu():
     listaregistros = []
     while(True):
-        print('AGENDA DE CONTACTOS')
+        print('Menú--AGENDA DE CONTACTOS')
+        print()
         print('1. Ingresar Contacto')
         print('2. Mostrar Contactos')
         print('3. Salir')
+        print()
         opc = int(input('Seleccione una opción: '))
+        print()
         match (opc):
             case 1:
                 listaregistros = ingresar_contacto(listaregistros)
@@ -38,6 +45,7 @@ def presentar_menu():
                 break
             case _:
                 print('Opción no Válida')
+                print()
 
 
 presentar_menu()

@@ -3,7 +3,10 @@
 def ingresar_contacto(listaregistros):
     nombre = input('Ingrese el Nombre: ')
     telefono = int(input('Ingrese el número de teléfono: '))
-    registro = {'nombre': nombre, 'telefono': telefono}
+    registro = {
+        'nombre': nombre, 
+        'telefono': telefono
+        }
     listaregistros.append(registro)
     return listaregistros
 
@@ -11,10 +14,11 @@ def ingresar_contacto(listaregistros):
 def mostrar_contactos(listaregistros):
     for i in listaregistros:
         print('CONTACTOS REGISTRADOS')
-        print(i)
-        print(listaregistros)
-        print('Nombre: '+ i['nombre']+'  Teléfono: '+ str(i['telefono']))
-        print()
+        #print(i)
+        #print(listaregistros)
+        for j in listaregistros:
+            print('NOMBRE: '+ j['nombre']+'  TELÉFONO: '+ str(j['telefono']))
+           
 
 
 def presentar_menu():
@@ -37,3 +41,4 @@ def presentar_menu():
 
 
 presentar_menu()
+

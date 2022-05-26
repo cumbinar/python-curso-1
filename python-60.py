@@ -1,4 +1,10 @@
-#AGENDA DE TELÉFONOS, USANDO FUNCIONES
+import os
+
+
+#LIMPIAR PANTALLA
+
+def crear_linea():
+    print("="*50)
 
 #CREAR UN CONTACTO
 
@@ -32,8 +38,6 @@ def crear_contacto():
 
             contacto["listatelefonos"].append(tel)
 
-    print(contacto)
-
     return contacto
 
 
@@ -58,10 +62,9 @@ def ingresar_contacto(lista_contactos):
 
 def mostrar_contactos(lista_contactos):
 
-    for i in range(len(lista_contactos)):
+    for pos, contacto in enumerate(lista_contactos):
 
-        print(str(
-            i)+" " + lista_contactos[i]["nombres"] + " " + lista_contactos[i]["apellidos"])
+        print(str(pos)+" " + contacto["nombres"] + " " + contacto["apellidos"])
 
 
 #MOSTRAR UN CONTACTO
@@ -69,6 +72,28 @@ def mostrar_contactos(lista_contactos):
 # Preguntar por la posición
 
 # Mostrar todos los datos del contacto + edad + todos los numeros
+
+def mostrar_contacto(lista_contactos):
+
+    mostrar_contactos(lista_contactos)
+
+    pos = int(input("Ingrese posición de contacto a mostrar: "))
+
+    if (pos < 0 or pos >= len(lista_contactos)):
+
+        print("No se puede mostrar contacto")
+
+    else:
+
+        print("Nombre:    "+lista_contactos[pos]["nombres"])
+
+        print("Apellidos: "+lista_contactos[pos]["apellidos"])
+
+        print("Edad:      "+str(lista_contactos[pos]["edad"]))
+
+        for i in lista_contactos[pos]["listatelefonos"]:
+
+            print("Telefono:   "+str(i))
 
 
 #EDITAR UN CONTACTO
@@ -78,6 +103,38 @@ def mostrar_contactos(lista_contactos):
 # Preguntar por nombres, apellidos, edad
 
 # Hacer un ciclo para preguntar por los números de teléfono
+
+def editar_contacto(lista_contactos):
+
+    mostrar_contactos(lista_contactos)
+
+    pos = int(input("Ingrese posición de contacto a editar: "))
+
+    contacto = crear_contacto()
+
+    lista_contactos[pos] = contacto
+
+    return lista_contactos
+
+
+#BUSCAR UN CONTACTO
+
+# Preguntar la subcadena a buscar en los nombres
+
+# Si encuentra uno, imprimir con la posición
+
+def buscar_contacto(lista_contactos):
+
+    subcadena = input("Ingrese parte del nombre a buscar: ")
+
+    subcadena = subcadena.lower()
+
+    for pos, contacto in enumerate(lista_contactos):
+
+        if (contacto["nombres"].lower().count(subcadena) > 0):
+
+            print(str(pos)+" " +
+                  contacto["nombres"] + " " + contacto["apellidos"])
 
 
 #BORRAR UN CONTACTO
@@ -93,15 +150,26 @@ def presentar_menu():
 
     while (True):
 
+        crear_linea()
+
         print("MENU DE CONTACTOS")
+        crear_linea()
 
         print("1. Ingresar contacto")
 
         print("2. Mostrar lista de contactos")
 
+        print("3. Mostrar un contacto")
+
+        print("4. Editar un contacto")
+
+        print("5. Buscar un contacto")
+
         print("9. Salir")
 
         opc = int(input("Seleccione opción: "))
+
+        crear_linea()
 
         match (opc):
 
@@ -112,6 +180,18 @@ def presentar_menu():
             case 2:
 
                 mostrar_contactos(listaregistros)
+
+            case 3:
+
+                mostrar_contacto(listaregistros)
+
+            case 4:
+
+                listaregistros = editar_contacto(listaregistros)
+
+            case 5:
+
+                buscar_contacto(listaregistros)
 
             case 9:
 
